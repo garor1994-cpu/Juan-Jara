@@ -146,18 +146,15 @@
   const skipBtn = document.getElementById('skip-btn');
   const tapHint = document.getElementById('tap-hint');
 
-  // URL a la que se redirige tras abrir el sobre
   const REDIRECT_URL = 'https://planning.wedding/website/JuanyJaralaBoda';
 
   function revealInvitation() {
     overlay.classList.add('hidden');
-    // Pequeña pausa para que se vea la transición de desaparición del overlay
     setTimeout(() => {
       window.location.href = REDIRECT_URL;
     }, 800);
   }
 
-  // Al hacer click/tap sobre la imagen del sobre, se reproduce el video
   envelopeImage.addEventListener('click', () => {
     envelopeImage.style.display = 'none';
     tapHint.style.display = 'none';
@@ -165,10 +162,8 @@
     envelopeVideo.play();
   });
 
-  // Cuando el video termina, se redirige automáticamente
   envelopeVideo.addEventListener('ended', revealInvitation);
 
-  // Boton para saltar la animacion directamente
   skipBtn.addEventListener('click', revealInvitation);
 </script>
 </body>
